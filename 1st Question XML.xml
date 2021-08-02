@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>1stQuestionAnswer</h:title>
+    <model odk:xforms-version="1.0.0">
+      <instance>
+        <data id="snapshot_xml">
+          <start/>
+          <end/>
+          <today/>
+          <username/>
+          <Community_Profile_Form_1a/>
+          <ProjectName/>
+          <Geographical_Location/>
+          <HouseHold_Demographics/>
+          <No_of_people_in_HH/>
+          <Gender_of_head_of_HH/>
+          <How_many_females/>
+          <How_many_males/>
+          <How_many_children_10_Under/>
+          <HouseHold_Economics/>
+          <does_the_HH_Have_TV/>
+          <does_the_HH_Have_radio/>
+          <deos_the_HH_have_cell_phone/>
+          <HouseHOld_Education/>
+          <What_level_education_head_HH/>
+          <what_level_edu_anyonn_hh/>
+          <Household_enviroment/>
+          <HouseholdHead/>
+          <does_hh_have_electricity/>
+          <does_HH_have_latrine/>
+          <is_facility_shared/>
+          <GPS_Point/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </data>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/data/start" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/data/end" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/data/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="username" nodeset="/data/username" type="string"/>
+      <bind nodeset="/data/Community_Profile_Form_1a" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/ProjectName" required="true()" type="string"/>
+      <bind nodeset="/data/Geographical_Location" required="true()" type="string"/>
+      <bind nodeset="/data/HouseHold_Demographics" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/No_of_people_in_HH" required="true()" type="int"/>
+      <bind nodeset="/data/Gender_of_head_of_HH" required="true()" type="string"/>
+      <bind nodeset="/data/How_many_females" required="true()" type="int"/>
+      <bind nodeset="/data/How_many_males" required="true()" type="int"/>
+      <bind nodeset="/data/How_many_children_10_Under" required="true()" type="int"/>
+      <bind nodeset="/data/HouseHold_Economics" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/does_the_HH_Have_TV" required="true()" type="string"/>
+      <bind nodeset="/data/does_the_HH_Have_radio" required="true()" type="string"/>
+      <bind nodeset="/data/deos_the_HH_have_cell_phone" required="true()" type="string"/>
+      <bind nodeset="/data/HouseHOld_Education" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/What_level_education_head_HH" required="true()" type="string"/>
+      <bind nodeset="/data/what_level_edu_anyonn_hh" required="true()" type="string"/>
+      <bind nodeset="/data/Household_enviroment" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/HouseholdHead" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/data/does_hh_have_electricity" required="true()" type="string"/>
+      <bind nodeset="/data/does_HH_have_latrine" required="true()" type="string"/>
+      <bind nodeset="/data/is_facility_shared" relevant=" /data/does_HH_have_latrine  = 'YES'" required="true()" type="string"/>
+      <bind nodeset="/data/GPS_Point" required="true()" type="geopoint"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/Community_Profile_Form_1a">
+      <label>UN-HABITAT 1ST Question Form</label>
+    </input>
+    <input appearance="minimal" ref="/data/ProjectName">
+      <label>Project Name</label>
+      <hint>This is the project name</hint>
+    </input>
+    <select1 appearance="minimal" ref="/data/Geographical_Location">
+      <label>Geographical Location</label>
+      <hint>Select your location</hint>
+      <item>
+        <label>Kabul</label>
+        <value>Kabul</value>
+      </item>
+      <item>
+        <label>Hirat</label>
+        <value>Hirat</value>
+      </item>
+      <item>
+        <label>Kandahar</label>
+        <value>Kandahar</value>
+      </item>
+      <item>
+        <label>Jalalabad</label>
+        <value>Jalalabad</value>
+      </item>
+      <item>
+        <label>Puli Khumri</label>
+        <value>Puli Khumri</value>
+      </item>
+      <item>
+        <label>Maimana</label>
+        <value>Maimana</value>
+      </item>
+      <item>
+        <label>Ferozkoh</label>
+        <value>Ferozkoh</value>
+      </item>
+      <item>
+        <label>Khost</label>
+        <value>Khost</value>
+      </item>
+      <item>
+        <label>Asadabad</label>
+        <value>Asadabad</value>
+      </item>
+      <item>
+        <label>Kunduz</label>
+        <value>Kunduz</value>
+      </item>
+      <item>
+        <label>Mehterlam</label>
+        <value>Mehterlam</value>
+      </item>
+      <item>
+        <label>Parun</label>
+        <value>Parun</value>
+      </item>
+      <item>
+        <label>Taloqan</label>
+        <value>Taloqan</value>
+      </item>
+    </select1>
+    <input ref="/data/HouseHold_Demographics">
+      <label>House Demographics</label>
+    </input>
+    <input ref="/data/No_of_people_in_HH">
+      <label>Number of People in HouseHold</label>
+    </input>
+    <select1 ref="/data/Gender_of_head_of_HH">
+      <label>Gender of the Head of HouseHold</label>
+      <item>
+        <label>Male</label>
+        <value>Male</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>Female</value>
+      </item>
+    </select1>
+    <input appearance="minimal" ref="/data/How_many_females">
+      <label>How many Females</label>
+    </input>
+    <input appearance="minimal" ref="/data/How_many_males">
+      <label>How many Males</label>
+    </input>
+    <input ref="/data/How_many_children_10_Under">
+      <label>How many children (Under 10 Years)?</label>
+    </input>
+    <input ref="/data/HouseHold_Economics">
+      <label>HouseHold Economics</label>
+    </input>
+    <select1 ref="/data/does_the_HH_Have_TV">
+      <label>Does the household have a television?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <select1 ref="/data/does_the_HH_Have_radio">
+      <label>Does the household have a radio?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <select1 ref="/data/deos_the_HH_have_cell_phone">
+      <label>Does the household have a cell-phone?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <input ref="/data/HouseHOld_Education">
+      <label>HouseHold Education</label>
+    </input>
+    <select1 ref="/data/What_level_education_head_HH">
+      <label>What is the level of education of the head of household?</label>
+      <item>
+        <label>12th Grade</label>
+        <value>12 Grade</value>
+      </item>
+      <item>
+        <label>Bachelor</label>
+        <value>Bachelor</value>
+      </item>
+      <item>
+        <label>Master</label>
+        <value>Master</value>
+      </item>
+      <item>
+        <label>PhD</label>
+        <value>PHD</value>
+      </item>
+    </select1>
+    <select1 ref="/data/what_level_edu_anyonn_hh">
+      <label>What is the level of education of anyone in the household?</label>
+      <item>
+        <label>12th Grade</label>
+        <value>12 Grade</value>
+      </item>
+      <item>
+        <label>Bachelor</label>
+        <value>Bachelor</value>
+      </item>
+      <item>
+        <label>Master</label>
+        <value>Master</value>
+      </item>
+      <item>
+        <label>PhD</label>
+        <value>PHD</value>
+      </item>
+    </select1>
+    <input ref="/data/Household_enviroment">
+      <label>HOUSEHOLD ENVIRONMENT</label>
+    </input>
+    <input ref="/data/HouseholdHead">
+      <label>Household Head</label>
+    </input>
+    <select1 ref="/data/does_hh_have_electricity">
+      <label>Does the household have electricity?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <select1 ref="/data/does_HH_have_latrine">
+      <label>Does the household have a latrine or toilet?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <select1 ref="/data/is_facility_shared">
+      <label>If "Yes" above, is the facility shared?</label>
+      <item>
+        <label>Yes</label>
+        <value>YES</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>NO</value>
+      </item>
+    </select1>
+    <input ref="/data/GPS_Point">
+      <label>GPS Point</label>
+      <hint>Collect your current GPS point</hint>
+    </input>
+  </h:body>
+</h:html>
